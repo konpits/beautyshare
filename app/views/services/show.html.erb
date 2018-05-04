@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @service.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @service.description %>
+</p>
+
+<p>
+  <strong>Price per hour:</strong>
+  <%= @service.price_per_hour %>
+</p>
+
+<p>
+  <strong>Min duration:</strong>
+  <%= @service.min_duration %>
+</p>
+
+<p>
+  <strong>Max duration:</strong>
+  <%= @service.max_duration %>
+</p>
+
+<p>
+  <strong>Image data:</strong>
+  <%= @service.image_data %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @service.user %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @service.category %>
+</p>
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>
