@@ -7,9 +7,31 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Roboto+Mono" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="flex-container">
+      <header>
+        <h1><%= image_tag("logo/logo.png", width:'355', height:'121', alt: "boss") %></h1>
+      </header>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="#"><h1>Services</h1></a></li>
+          <li><a href="#"><h1>Find a consultant</h1></a></li>
+          <li><a href="#"><h1>Become a consultant</h1></a></li>
+          <li><a href="#"><h1>Profile</h1></a></li>
+          <li><a href="#"><h1>Contact</h1></a></li>
+        </ul>
+      </nav>
+
+      <article class="article">
+          <%= yield %>
+      </article>
+
+      <footer>Copyright &copy; 2018. BeautyShare Pty. Alls rights reserverd</footer>
+</div>
   </body>
 </html>
