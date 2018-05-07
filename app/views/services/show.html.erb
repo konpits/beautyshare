@@ -6,12 +6,17 @@
 </p>
 
 <p>
+  <strong>Category:</strong>
+  <%= @service.category.title %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @service.description %>
 </p>
 
 <p>
-  <strong>Price per hour:</strong>
+  <strong>Price</strong>
   <%= @service.price_per_hour %>
 </p>
 
@@ -26,19 +31,16 @@
 </p>
 
 <p>
-  <strong>Image data:</strong>
-  <%= @service.image_data %>
+  <strong></strong>
+  <%= image_tag @service.image_data %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @service.user %>
+  <strong>Consultant:</strong>
+  <%= @name %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @service.category %>
-</p>
+
 
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>
