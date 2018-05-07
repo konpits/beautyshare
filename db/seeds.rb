@@ -174,3 +174,32 @@
 #     }
     
 # ]) { |p| puts "#{p.first_name} created" }
+
+# User.create ([
+#     {
+#         email: 'user6@gmail.com', 
+#         password: '123456789', 
+#         password_confirmation: '123456789' 
+#     },
+#     {
+#         email: 'user7@domain.com', 
+#         password: '123456789', 
+#         password_confirmation: '123456789' 
+#     },
+#     {
+#         email: 'user8@domain.com', 
+#         password: '123456789', 
+#         password_confirmation: '123456789' 
+#     },
+#     {
+#         email: 'user9@domain.com', 
+#         password: '123456789', 
+#         password_confirmation: '123456789' 
+#     },
+#     {
+#         email: 'user10@domain.com', 
+#         password: '123456789', 
+#         password_confirmation: '123456789' 
+#     }
+    
+# ]) { |u| puts "#{u.email} created" }

@@ -11,7 +11,7 @@ class ServicesController < ApplicationController
   # GET /services/1.json
   def show
     user = @service.user
-    @name  =  Profile.find(user.id).first_name + " " + Profile.find(user.id).last_name 
+    @consultant_name  =  Profile.find(user.id).first_name + " " + Profile.find(user.id).last_name 
   end
 
   # GET /services/new

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Consultant:</strong>
+  <%= @booking.consultant %>
+</p>
+
+<p>
+  <strong>Consumer:</strong>
+  <%= @booking.consumer %>
+</p>
+
+<p>
+  <strong>Check in:</strong>
+  <%= @booking.check_in %>
+</p>
+
+<p>
+  <strong>Checkout:</strong>
+  <%= @booking.checkout %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @booking.status %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @booking.service %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>
