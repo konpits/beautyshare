@@ -116,61 +116,61 @@
 
 
 
-Profile.create ([
-    {
-        first_name: 'Belinda',
-        last_name: 'Daniels',
-        street_address: '620 Murray Road',
-        city: 'Preston',
-        state: 'VIC',
-        zip: '3072',
-        country_code: 'AUS',
-        image_data: 'https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg',
-        user_id: 1
-    },
-    {
-        first_name: 'Ann',
-        last_name: 'Frank',
-        street_address: '640 Murray Road',
-        city: 'Preston',
-        state: 'VIC',
-        zip: '3072',
-        country_code: 'AUS',
-        image_data: 'https://www.buckinghamfacialplastics.com/wp-content/uploads/2014/01/Belotero.jpg',
-        user_id: 2
-    },
-    {
-        first_name: 'Christina',
-        last_name: 'Smith',
-        street_address: '635 Murray Road',
-        city: 'Preston',
-        state: 'VIC',
-        zip: '3072',
-        country_code: 'AUS',
-        image_data: 'http://2.bp.blogspot.com/-9J-2HjcDML8/VFcY0LSQkGI/AAAAAAAAArA/LetlZU8aCrY/s1600/stylish-girl-with-unique-hair-style-dp-for-facebook-profile-picture.jpg',
-        user_id: 3
-    },
-    {
-        first_name: 'Dolores',
-        last_name: 'Marquez',
-        street_address: '637 Murray Road',
-        city: 'Preston',
-        state: 'VIC',
-        zip: '3072',
-        country_code: 'AUS',
-        image_data: 'http://1.bp.blogspot.com/-E71xGQF2P1w/VFcfgo8rP1I/AAAAAAAAArs/g-lfr1SS2wA/s1600/Stylish%2BGirls%2BDP%2Bfor%2Bfacebook%2B(100).jpg',
-        user_id: 4
-    },
-    {
-        first_name: 'John',
-        last_name: 'Travis',
-        street_address: '630 Murray Road',
-        city: 'Preston',
-        state: 'VIC',
-        zip: '3072',
-        country_code: 'AUS',
-        image_data: 'http://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754',
-        user_id: 5
-    }
+# Profile.create ([
+#     {
+#         first_name: 'Belinda',
+#         last_name: 'Daniels',
+#         street_address: '620 Murray Road',
+#         city: 'Preston',
+#         state: 'VIC',
+#         zip: '3072',
+#         country_code: 'AUS',
+#         image_data: 'https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg',
+#         user_id: 1
+#     },
+#     {
+#         first_name: 'Ann',
+#         last_name: 'Frank',
+#         street_address: '640 Murray Road',
+#         city: 'Preston',
+#         state: 'VIC',
+#         zip: '3072',
+#         country_code: 'AUS',
+#         image_data: 'https://www.buckinghamfacialplastics.com/wp-content/uploads/2014/01/Belotero.jpg',
+#         user_id: 2
+#     },
+#     {
+#         first_name: 'Christina',
+#         last_name: 'Smith',
+#         street_address: '635 Murray Road',
+#         city: 'Preston',
+#         state: 'VIC',
+#         zip: '3072',
+#         country_code: 'AUS',
+#         image_data: 'http://2.bp.blogspot.com/-9J-2HjcDML8/VFcY0LSQkGI/AAAAAAAAArA/LetlZU8aCrY/s1600/stylish-girl-with-unique-hair-style-dp-for-facebook-profile-picture.jpg',
+#         user_id: 3
+#     },
+#     {
+#         first_name: 'Dolores',
+#         last_name: 'Marquez',
+#         street_address: '637 Murray Road',
+#         city: 'Preston',
+#         state: 'VIC',
+#         zip: '3072',
+#         country_code: 'AUS',
+#         image_data: 'http://1.bp.blogspot.com/-E71xGQF2P1w/VFcfgo8rP1I/AAAAAAAAArs/g-lfr1SS2wA/s1600/Stylish%2BGirls%2BDP%2Bfor%2Bfacebook%2B(100).jpg',
+#         user_id: 4
+#     },
+#     {
+#         first_name: 'John',
+#         last_name: 'Travis',
+#         street_address: '630 Murray Road',
+#         city: 'Preston',
+#         state: 'VIC',
+#         zip: '3072',
+#         country_code: 'AUS',
+#         image_data: 'http://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754',
+#         user_id: 5
+#     }
     
-]) { |p| puts "#{p.first_name} created" }
+# ]) { |p| puts "#{p.first_name} created" }

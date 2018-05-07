@@ -1,0 +1,19 @@
+<% @services.each do |service| %>
+
+    <div class="container">
+        <div class="card">
+
+            <div class="image">
+                <%= image_tag(service.image_data, alt: "photo") %>
+            </div>
+
+            <div class="text">
+                <div class="fab">&#43;</div>
+                <h3><%= service.title %></h3>
+                <p><%= service.description %></p>
+            </div>
+
+        </div>
+    </div>
+
+<% end %>
