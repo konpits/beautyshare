@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @service_title = Service.find(@service_id).title
     @consultant_id = Service.find(@service_id).user_id
     @consultant_name = Profile.find(@consultant_id).first_name + " " + Profile.find(@consultant_id).last_name 
+
     @booking = Booking.new
   end
 
@@ -28,11 +29,16 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
+    
+    # @service_id = params[:format]
+    # @consultant_id = Service.find(@service_id).user_id
+    # @consumer_id = current_user.id
+
     @booking = Booking.new(booking_params)
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        format.html { redirect_to @booking, notice: 'Booking was successfully created. This booking will not be confirmed until the consultant approves it.' }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new }

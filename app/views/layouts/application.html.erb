@@ -20,15 +20,22 @@
 
       <nav class="nav">
         <ul>
-          <li><a href="#"><h1>Services</h1></a></li>
+          <li><a href="services"><h1>Services</h1></a></li>
           <li><a href="#"><h1>Find a consultant</h1></a></li>
           <li><a href="#"><h1>Become a consultant</h1></a></li>
           <li><a href="#"><h1>Profile</h1></a></li>
+          <%# <%= link_to "Profile", profile_path(1), :class => "a" %>
           <li><a href="#"><h1>Bookings</h1></a></li>
           <li><a href="#"><h1>Contact</h1></a></li>
         </ul>
+        <% if !user_signed_in? %>
+            <%= link_to "Sign in", new_user_session_path %><p>
+            <%= link_to "Sign up", new_user_registration_path %>
+        <% else %>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% end%>   
       </nav>
-
+          
       <article class="article">
           <%= yield %>
       </article>
