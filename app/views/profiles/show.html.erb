@@ -1,49 +1,49 @@
 <p id="notice"><%= notice %></p>
 
+</br>
+<h1>You can view and edit your profile below!<h1>
+</br></br>
 <p>
   <strong>First name:</strong>
   <%= @profile.first_name %>
 </p>
-
+</br>
 <p>
   <strong>Last name:</strong>
   <%= @profile.last_name %>
 </p>
-
+</br>
 <p>
   <strong>Street address:</strong>
   <%= @profile.street_address %>
 </p>
-
+</br>
 <p>
   <strong>City:</strong>
   <%= @profile.city %>
 </p>
-
+</br>
 <p>
   <strong>State:</strong>
   <%= @profile.state %>
 </p>
-
+</br>
 <p>
   <strong>Zip:</strong>
   <%= @profile.zip %>
 </p>
-
+</br>
 <p>
   <strong>Country code:</strong>
   <%= @profile.country_code %>
 </p>
-
+</br>
 <p>
   <strong>Image data:</strong>
   <%= @profile.image_data %>
 </p>
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
+</br>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'Back', profile_path(id: @profile.user_id) %>
+</br></br>

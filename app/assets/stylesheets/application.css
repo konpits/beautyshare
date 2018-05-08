@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+* {
+    padding: 0px;
+    margin: 0;
+}
+
  .flex-container {
     display: -webkit-flex;
     display: flex;  
@@ -22,7 +27,7 @@
 }
 
 .flex-container > * {
-    padding: 15px;
+    padding: 1px;
     -webkit-flex: 1 100%;
     flex: 1 100%;
 }
@@ -31,7 +36,11 @@
     text-align: left;
 }
 
-.nav {background:#fff;}
+.nav {
+    background:#fff;
+    height: 50px;
+    padding-top: 10px;
+}
 header {background: black;color:white;}
 footer {
     background: black;color:white;
@@ -43,11 +52,11 @@ footer {
     /* display: block; */
     list-style-type: none;
     font-family: 'EB Garamond', serif;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bolder;}
     @media (min-width: 991px) {
         .nav ul {
-            font-size: 1.5em;
+            font-size: 2.5em;
     }   
 }
 
@@ -63,8 +72,24 @@ footer {
     }
 }
 
-.nav ul a {
+.nav ul .a {
+    color: black;
     text-decoration: none;
     display: block;
     padding: 8px;
 }
+
+.nav ul .a:hover, .nav ul .a:active {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.side_nav {
+    color: black;
+    text-decoration: none;
+}
+
+

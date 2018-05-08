@@ -59,17 +59,18 @@ body {
   margin-top: -50px;
   right: 20px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, .3);
-  color: #fff;
+  color: black;
   font-size: 48px;
   line-height: 48px;
   text-align: center;
-  background: #0066A2;
+  background: white;
   -webkit-transition: -webkit-transform .2s ease-in-out;
   transition: transform .2s ease-in-out;
 }
 
 .fab:hover {
-  background: #549D3C;
+  color: white;
+  background: black;
   cursor: pointer;
   -ms-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
@@ -81,3 +82,6 @@ body {
   
 }
 
+h1 {
+  text-align: center;
+}

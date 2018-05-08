@@ -18,32 +18,30 @@
     <div class="flex-container">
       <header>
         <h1><%= link_to( (image_tag("logo/logo.png", width:'355', height:'121', alt: "boss")), root_path) %></h1>
-
       </header>
-
       <nav class="nav">
         <ul>
-          <li><a href="services"><h1>Services</h1></a></li>
-          <li><a href="#"><h1>Find a consultant</h1></a></li>
-          <li><a href="#"><h1>Become a consultant</h1></a></li>
-          <li><a href="#"><h1>Profile</h1></a></li>
-          <%# <%= link_to "Profile", profile_path(1), :class => "a" %>
-          <li><a href="#"><h1>Bookings</h1></a></li>
-          <li><a href="#"><h1>Contact</h1></a></li>
+          <li><%= link_to "Services", services_path, :class => "a" %></li>
+          <li><%= link_to "Find a consultant", profiles_path, :class => "a" %></li>
+          <li><%= link_to "Become a consultant", new_service_path, :class => "a" %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Profile", profile_path(current_user.id), :class => "a" %></li>
+          <% end%>   
+          <li><%= link_to "Bookings", bookings_path, :class => "a" %></li>
+          <li><%= link_to "Contact", root_path, :class => "a" %></li>
         </ul>
         <% if !user_signed_in? %>
-            <%= link_to "Sign in", new_user_session_path %><p>
-            <%= link_to "Sign up", new_user_registration_path %>
+            <%= link_to "Sign-in", new_user_session_path, :class => "side_nav" %><p>
+            <%= link_to "Sign-up", new_user_registration_path, :class => "side_nav" %>
         <% else %>
-            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+            <%= link_to "Sign-out", destroy_user_session_path, :method => :delete, :class => "side_nav" %>
         <% end%>   
       </nav>
-          
       <article class="article">
           <%= yield %>
       </article>
 
       <footer>Copyright &copy; 2018. BeautyShare Pty. Alls rights reserverd</footer>
-</div>
+    </div>
   </body>
 </html>

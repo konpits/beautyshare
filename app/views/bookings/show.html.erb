@@ -33,6 +33,11 @@
 
 <% if user_signed_in? && @booking.status == 'Accepted'  %>
   <%= render 'charge_form', booking: @booking, user: current_user %>
+
+  <%= link_to new_user_registration_path, class:"stripe-button-el" do  %>
+    <span style="display: block; min-height: 30px;">Pay with Card</span>
+  <% end %>
+
 <% end %>
 
 

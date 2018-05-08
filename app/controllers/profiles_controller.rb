@@ -4,7 +4,13 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = []
+    consultant_ids = Service.distinct.pluck(:user_id)
+
+    consultant_ids.each do |id|
+      @profiles.push(Profile.find(id))
+    end
+    @profiles
   end
 
   # GET /profiles/1
