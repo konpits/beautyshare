@@ -30,5 +30,9 @@
   <%= @booking.service %>
 </p>
 
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
+
+<% if ( (@booking.consultant.id == current_user.id) && (@booking.status == 'Unconfirmed') ) %>
+  <%= link_to "Accept Booking", accept_booking_path(booking_id: @booking.id), :method => :put %>
+<% end %>
 <%= link_to 'Back', bookings_path %>
+      

@@ -4,7 +4,8 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(consumer_id: current_user).or(Booking.where(consultant_id: current_user))
+
   end
 
   # GET /bookings/1
@@ -71,6 +72,22 @@ class BookingsController < ApplicationController
       end
     end
   end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.update_attributes(status: 'Accepted')
+  
+    if @booking.save
+      # ContactMailer.send_contact_email(:message => "Accepted").deliver_now
+      flash[:notice] =  'Booking was successfully accepted. This booking will not be confirmed until a payment is made.' 
+      redirect_to @booking
+    else
+      format.html { render :new }
+      format.json { render json: @booking.errors, status: :unprocessable_entity }
+    end
+    
+  end
+
 
   # DELETE /bookings/1
   # DELETE /bookings/1.json

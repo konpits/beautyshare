@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Consultant</th>
-      <th>Consumer</th>
       <th>Check in</th>
       <th>Checkout</th>
       <th>Status</th>
@@ -18,16 +17,13 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.consultant %></td>
-        <td><%= booking.consumer %></td>
+        <td><%= Profile.find(booking.consultant.id).first_name + " " + Profile.find(booking.consultant.id).last_name %></td>
         <td><%= booking.check_in %></td>
         <td><%= booking.checkout %></td>
         <td><%= booking.status %></td>
-        <td><%= booking.service %></td>
+        <td><%= Service.find(booking.service.id).title %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
   </tbody>
 </table>
