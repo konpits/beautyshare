@@ -2,13 +2,9 @@
 
 <p>
   <strong>Consultant:</strong>
-  <%= @booking.consultant %>
+  <%= Profile.find(@booking.consultant.id).first_name + " " + Profile.find(@booking.consultant.id).last_name %>
 </p>
 
-<p>
-  <strong>Consumer:</strong>
-  <%= @booking.consumer %>
-</p>
 
 <p>
   <strong>Check in:</strong>
@@ -27,8 +23,17 @@
 
 <p>
   <strong>Service:</strong>
-  <%= @booking.service %>
+  <%= Service.find(@booking.service.id).title %>
 </p>
+
+<p>
+  <strong>Price:</strong>
+  <%= "$#{ (Service.find(@booking.service.id).price_per_hour) / 100}" %>
+</p>
+
+<% if user_signed_in? && @booking.status == 'Accepted'  %>
+  <%= render 'charge_form', booking: @booking, user: current_user %>
+<% end %>
 
 
 <% if ( (@booking.consultant.id == current_user.id) && (@booking.status == 'Unconfirmed') ) %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :bookings do
     member do
       put :accept
+      post 'charge'
     end
   end
 

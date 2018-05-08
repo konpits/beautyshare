@@ -89,6 +89,47 @@ class BookingsController < ApplicationController
   end
 
 
+   # POST /bookings/1/charge
+   def charge
+    
+    if current_user.stripe_id.blank?
+      customer = Stripe::Customer.create(
+        :email => params[:stripeEmail],
+        :source  => params[:stripeToken]
+      )
+      current_user.stripe_id = customer.id
+      current_user.save!
+    end
+
+    @booking = Booking.find(params[:id])
+  
+    Stripe::Charge.create(
+      customer:  current_user.stripe_id,
+      amount: Service.find(@booking.service_id).price_per_hour,
+      description: Service.find(@booking.service.id).title,
+      currency: 'aud'
+    )
+
+    # current_user.charges << Charge.new(charge_id: charge.id)
+    @booking.update_attributes(status: 'Paid')
+    if @booking.save
+      # ContactMailer.send_contact_email(:message => "Accepted").deliver_now
+      flash[:notice] = 'Payment made!'
+      redirect_to @booking
+    else
+      format.html { render :new }
+      format.json { render json: @booking.errors, status: :unprocessable_entity }
+    end
+
+  # rescue Stripe::CardError => e
+  #   flash[:error] = e.message
+  #   redirect_back fallback_location: sneakers_path
+  # end
+
+ 
+end
+
+
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy

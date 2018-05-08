@@ -6,6 +6,9 @@ ruby '2.4.1'
 # Use devise for authentication
 gem 'devise', '~> 4.4'
 
+# Use stripe for payments
+gem 'stripe', '~> 3.13'
+
 # use mailgun to send emails
 gem 'mailgun-ruby', '~> 1.1', '>= 1.1.9'
 
