@@ -25,19 +25,30 @@ class BookingsController < ApplicationController
   # GET /bookings/1/edit
   def edit
   end
+  
 
   # POST /bookings
   # POST /bookings.json
   def create
     
-    # @service_id = params[:format]
-    # @consultant_id = Service.find(@service_id).user_id
-    # @consumer_id = current_user.id
+    @service_id = 2
+    @consultant_id = Service.find(@service_id).user_id
+    @consumer_id = current_user.id
 
-    @booking = Booking.new(booking_params)
+
+    @booking = Booking.new({
+      consultant_id: @consultant_id,
+      consumer_id: @consumer_id,
+      service_id: @service_id,
+      status: "Unconfirmed",
+      check_in: booking_params[:check_in],
+      checkout: booking_params[:checkout]
+    })
+
 
     respond_to do |format|
       if @booking.save
+        ContactMailer.send_contact_email().deliver_now
         format.html { redirect_to @booking, notice: 'Booking was successfully created. This booking will not be confirmed until the consultant approves it.' }
         format.json { render :show, status: :created, location: @booking }
       else
@@ -79,6 +90,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit( :check_in, :checkout, :status, :service_id)
+      params.require(:booking).permit( :check_in, :checkout, :service_id)
     end
 end

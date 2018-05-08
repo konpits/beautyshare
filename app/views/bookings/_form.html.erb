@@ -20,18 +20,7 @@
     <h4>Consultant:</h4>
     <%= @consultant_name %>
   </div>
-
-
-    <%# <h4>Consumer:</h4>
-    <%= @consumer.id %>
  
-
-
-  <div class="field">
-    <%= form.label :consumer_id %>
-    <%= form.text_field :consumer_id %>
-  </div>
-
   <div class="field">
     <%= form.label :check_in %>
     <%= form.datetime_select :check_in %>
@@ -42,18 +31,8 @@
     <%= form.datetime_select :checkout %>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
 
-
-
-<%= params.each do |key,value| %>
-  <%= Rails.logger.warn "Param #{key}: #{value}" %>
-<% end %>
