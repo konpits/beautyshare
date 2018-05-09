@@ -31,12 +31,10 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    print "yolo"
- 
-     checkIn = parse_datetime_params booking_params, "check_in", utc_or_local = "AEST"
-     checkOut = parse_datetime_params booking_params, "checkout", utc_or_local = "AEST"
 
-    @service_id = 2
+    checkIn = parse_datetime_params booking_params, "check_in", utc_or_local = "AEST"
+    checkOut = parse_datetime_params booking_params, "checkout", utc_or_local = "AEST"
+    @service_id = params[:booking][:service_id].to_i
     @consultant_id = Service.find(@service_id).user_id
     @consumer_id = current_user.id
 

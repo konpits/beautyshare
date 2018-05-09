@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :consulted_bookings, :class_name => 'Booking', :foreign_key => 'consultant_id'
   has_many :consumed_bookings, :class_name => 'Booking', :foreign_key => 'consumer_id'
+  has_one :profile
 end

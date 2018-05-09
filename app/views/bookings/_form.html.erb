@@ -31,7 +31,10 @@
     <%= form.label :checkout %>
     <%= form.datetime_select :checkout, :include_blank => true %>
   </div>
+
+    <%= form.hidden_field :service_id, value: @service_id %>
 </br>
+
   <div class="actions">
     <%= form.submit %>
   </div>
