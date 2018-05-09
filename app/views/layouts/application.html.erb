@@ -28,7 +28,7 @@
             <li><%= link_to "Profile", profile_path(current_user.id), :class => "a" %></li>
           <% end%>   
           <li><%= link_to "Bookings", bookings_path, :class => "a" %></li>
-          <li><%= link_to "Contact", root_path, :class => "a" %></li>
+          <li><%= link_to "Contact", pages_contact_path, :class => "a" %></li>
         </ul>
         <% if !user_signed_in? %>
             <%= link_to "Sign-in", new_user_session_path, :class => "side_nav" %><p>
@@ -38,6 +38,7 @@
         <% end%>   
       </nav>
       <article class="article">
+      <hr>
           <%= yield %>
       </article>
 

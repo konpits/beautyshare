@@ -31,7 +31,11 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    
+    print "yolo"
+ 
+     checkIn = parse_datetime_params booking_params, "check_in", utc_or_local = "AEST"
+     checkOut = parse_datetime_params booking_params, "checkout", utc_or_local = "AEST"
+
     @service_id = 2
     @consultant_id = Service.find(@service_id).user_id
     @consumer_id = current_user.id
@@ -42,8 +46,8 @@ class BookingsController < ApplicationController
       consumer_id: @consumer_id,
       service_id: @service_id,
       status: "Unconfirmed",
-      check_in: booking_params[:check_in],
-      checkout: booking_params[:checkout]
+      check_in: checkIn,
+      checkout: checkOut
     })
 
 
@@ -149,5 +153,21 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
       params.require(:booking).permit( :check_in, :checkout, :service_id)
+    end
+
+    # Converts datetime form to Date object
+    def parse_datetime_params params, label, utc_or_local = :local
+      begin
+        year   = params[(label.to_s + '(1i)').to_sym].to_i
+        month  = params[(label.to_s + '(2i)').to_sym].to_i
+        mday   = params[(label.to_s + '(3i)').to_sym].to_i
+        hour   = (params[(label.to_s + '(4i)').to_sym] || 0).to_i
+        minute = (params[(label.to_s + '(5i)').to_sym] || 0).to_i
+        second = (params[(label.to_s + '(6i)').to_sym] || 0).to_i
+
+        return DateTime.civil_from_format(utc_or_local,year,month,mday,hour,minute,second)
+      rescue => e
+        return nil
+      end
     end
 end

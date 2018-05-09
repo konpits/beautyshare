@@ -1,3 +1,4 @@
+</br>
 <%= form_with(model: booking, local: true) do |form| %>
   <% if booking.errors.any? %>
     <div id="error_explanation">
@@ -20,17 +21,17 @@
     <h4>Consultant:</h4>
     <%= @consultant_name %>
   </div>
- 
+
   <div class="field">
     <%= form.label :check_in %>
-    <%= form.datetime_select :check_in %>
+    <%= form.datetime_select :check_in, :include_blank => true %>
   </div>
 
   <div class="field">
     <%= form.label :checkout %>
-    <%= form.datetime_select :checkout %>
+    <%= form.datetime_select :checkout, :include_blank => true %>
   </div>
-
+</br>
   <div class="actions">
     <%= form.submit %>
   </div>

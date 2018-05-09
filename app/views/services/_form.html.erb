@@ -46,6 +46,8 @@
     <%= form.collection_select :category_id, Category.order(:title), :id, :title, include_blank: false %>
   </div>
 
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

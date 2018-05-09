@@ -16,9 +16,10 @@
                 <p><%= "Services offered by #{profile.first_name}:" %></p>
                 </br>
                 <p><% Service.where(user_id: profile.user_id).each do |service| %></p>
-                    <p><%= "#{service.title}" %></p>
+                    <strong><%= "#{service.title}" %></strong>
                     </br>
                     <p> <%= link_to 'See service', service_path(:id => service.id), :class => "link_to" %></p>
+                    </br>
                 <% end %>
                 <p>
 

@@ -1,48 +1,38 @@
 <p id="notice"><%= notice %></p>
-
+</br>
 <p>
   <strong>Consultant:</strong>
   <%= Profile.find(@booking.consultant.id).first_name + " " + Profile.find(@booking.consultant.id).last_name %>
 </p>
-
-
+</br>
 <p>
-  <strong>Check in:</strong>
-  <%= @booking.check_in %>
+  <strong>Date:</strong>
+  <%= @booking.check_in.strftime("%d/%m%Y %T") %>
 </p>
-
-<p>
-  <strong>Checkout:</strong>
-  <%= @booking.checkout %>
-</p>
-
+</br>
 <p>
   <strong>Status:</strong>
   <%= @booking.status %>
 </p>
-
+</br>
 <p>
   <strong>Service:</strong>
   <%= Service.find(@booking.service.id).title %>
 </p>
-
+</br>
 <p>
   <strong>Price:</strong>
   <%= "$#{ (Service.find(@booking.service.id).price_per_hour) / 100}" %>
 </p>
-
+</br>
 <% if user_signed_in? && @booking.status == 'Accepted'  %>
   <%= render 'charge_form', booking: @booking, user: current_user %>
-
-  <%= link_to new_user_registration_path, class:"stripe-button-el" do  %>
-    <span style="display: block; min-height: 30px;">Pay with Card</span>
-  <% end %>
-
 <% end %>
 
 
 <% if ( (@booking.consultant.id == current_user.id) && (@booking.status == 'Unconfirmed') ) %>
   <%= link_to "Accept Booking", accept_booking_path(booking_id: @booking.id), :method => :put %>
 <% end %>
+</br>
 <%= link_to 'Back', bookings_path %>
-      
+</br></br>

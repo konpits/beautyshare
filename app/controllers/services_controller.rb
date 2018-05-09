@@ -16,6 +16,7 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
+    @services = Service.where(user_id: current_user.id)
     @service = Service.new
   end
 

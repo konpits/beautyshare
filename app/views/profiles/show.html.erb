@@ -4,13 +4,12 @@
 <h1>You can view and edit your profile below!<h1>
 </br></br>
 <p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
+
+  <%= @profile.first_name + " " + @profile.last_name %>
 </p>
 </br>
 <p>
-  <strong>Last name:</strong>
-  <%= @profile.last_name %>
+  <%= image_tag @profile.image_data, width: '10%' %>
 </p>
 </br>
 <p>
@@ -38,10 +37,6 @@
   <%= @profile.country_code %>
 </p>
 </br>
-<p>
-  <strong>Image data:</strong>
-  <%= @profile.image_data %>
-</p>
 </br>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
