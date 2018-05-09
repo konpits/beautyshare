@@ -29,6 +29,7 @@ body {
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     text-align: center;
+
 }
 
 .flex-container > * {
@@ -56,6 +57,8 @@ header {background: black;color:white;}
 footer {
     background: black;color:white;
     font-family: 'Roboto Mono', monospace;
+    height: 30px;
+
 }
 
 
