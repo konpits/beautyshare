@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'pages/contact'
-  root 'pages#home'
+  get '/', to: 'pages#home'
+  # root 'pages#home'
 
 
   resources :profiles
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   post '/pages/index', to: 'pages#index'
   post '/pages/index', to: 'pages#index'
+  get 'pages/contact', :to 'pages#contact'
 
 
 
