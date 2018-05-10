@@ -55,7 +55,7 @@ Service.create ([
     {
         title: 'Night Makeup', 
         description: 'Prepare yourself to shine. This makeup is ideal for special nights!', 
-        price_per_hour: 20,
+        price_per_hour: 2000,
         min_duration: 60,
         max_duration: 120,
         image_data: '' ,
@@ -65,7 +65,7 @@ Service.create ([
     {
         title: 'Hair Revival', 
         description: 'Give your hair the chance to revive. Treat them with the best natural ingredients. Restore your hair and you will feel the difference.', 
-        price_per_hour: 20,
+        price_per_hour: 2000,
         min_duration: 30,
         max_duration: 60,
         image_data: '',
@@ -75,7 +75,7 @@ Service.create ([
     {
         title: 'Day Makeup', 
         description: 'If you want a quick makeup that will give you the best possible outcome then look no further. Let me show you the way to do it in 5 mins.', 
-        price_per_hour: 15,
+        price_per_hour: 1500,
         min_duration: 30,
         max_duration: 60,
         image_data: '',
@@ -85,7 +85,7 @@ Service.create ([
     {
         title: 'Bridal Makeup', 
         description: 'This is your day and your face deserves to look fantastic. If you want the best bridal makeup that you will remember for ever, you can trust me!', 
-        price_per_hour: 50,
+        price_per_hour: 5000,
         min_duration: 90,
         max_duration: 120,
         image_data: '',
@@ -95,7 +95,7 @@ Service.create ([
     {
         title: 'Bridal Hair', 
         description: 'This is your day and your hair deserves to look fantastic. If you want the best bridal hair that you will remember for ever, you can trust me!', 
-        price_per_hour: 50,
+        price_per_hour: 5000,
         min_duration: 90,
         max_duration: 120,
         image_data: '',
@@ -105,7 +105,7 @@ Service.create ([
     {
         title: 'Ultimate Relaxation', 
         description: 'Relax and unwind. Give you face the chance to restore in a natural way. This treatment has been tested and can change your life. Start your first session and never look back.', 
-        price_per_hour: 50,
+        price_per_hour: 5000,
         min_duration: 90,
         max_duration: 120,
         image_data: '',

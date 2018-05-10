@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        ContactMailer.send_contact_email().deliver_now
+        # ContactMailer.send_contact_email(message:"Accepted").deliver_now
         format.html { redirect_to @booking, notice: 'Booking was successfully created. This booking will not be confirmed until the consultant approves it.' }
         format.json { render :show, status: :created, location: @booking }
       else
