@@ -1,3 +1,6 @@
+</br>
+<h1>My booking</h1>
+</br>
 <p id="notice"><%= notice %></p>
 </br>
 <p>
@@ -31,8 +34,8 @@
 
 
 <% if ( (@booking.consultant.id == current_user.id) && (@booking.status == 'Unconfirmed') ) %>
-  <%= link_to "Accept Booking", accept_booking_path(booking_id: @booking.id), :method => :put %>
+  <%= link_to "Accept Booking", accept_booking_path(booking_id: @booking.id), :method => :put, class: "btn" %>
 <% end %>
 </br>
-<%= link_to 'Back', bookings_path %>
+<%= link_to 'Back', bookings_path, class: "btn" %>
 </br></br>

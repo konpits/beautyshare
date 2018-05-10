@@ -11,6 +11,9 @@ gem "image_processing", "~> 1.0"
 # Use devise for authentication
 gem 'devise', '~> 4.4'
 
+# Use pundit for authorization
+gem 'pundit', '~> 1.1'
+
 # Use stripe for payments
 gem 'stripe', '~> 3.13'
 

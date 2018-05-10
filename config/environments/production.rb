@@ -53,6 +53,12 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+  # Configure mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV.fetch('MAILGUN_API'),
+    domain: ENV.fetch('MAILGUN_DOMAIN')
+  }
+
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 

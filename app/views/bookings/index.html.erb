@@ -22,7 +22,7 @@
         <td><%= booking.check_in.strftime("%d/%m%Y %T") %></td>
         <td><%= booking.status %></td>
         <td><%= Service.find(booking.service.id).title %></td>
-        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Show', booking,  class: "btn" %></td>
       </tr>
       <tr>
         <td></td>
