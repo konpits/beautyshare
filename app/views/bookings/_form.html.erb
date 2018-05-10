@@ -24,12 +24,12 @@
 
   <div class="field">
     <%= form.label :check_in %>
-    <%= form.datetime_select :check_in, :include_blank => true %>
+    <%= form.datetime_select :check_in, start_hour: 9, end_hour: 18, minute_step: 30 %>
   </div>
 
   <div class="field">
     <%= form.label :checkout %>
-    <%= form.datetime_select :checkout, :include_blank => true %>
+    <%= form.datetime_select :checkout, start_hour: 9, end_hour: 18, minute_step: 30 %>
   </div>
 
     <%= form.hidden_field :service_id, value: @service_id %>
