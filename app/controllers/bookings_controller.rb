@@ -38,7 +38,6 @@ class BookingsController < ApplicationController
     @consultant_id = Service.find(@service_id).user_id
     @consumer_id = current_user.id
 
-
     @booking = Booking.new({
       consultant_id: @consultant_id,
       consumer_id: @consumer_id,
@@ -47,7 +46,6 @@ class BookingsController < ApplicationController
       check_in: checkIn,
       checkout: checkOut
     })
-
 
     respond_to do |format|
       if @booking.save
@@ -80,8 +78,8 @@ class BookingsController < ApplicationController
     @booking.update_attributes(status: 'Accepted')
   
     if @booking.save
-      # ContactMailer.send_contact_email(:message => "Accepted").deliver_now
-      flash[:notice] =  'Booking was successfully accepted. This booking will not be confirmed until a payment is made.' 
+      #ContactMailer.send_contact_email(message:"Accepted").deliver_now
+      flash[:notice] =  'Booking was successfully accepted. This booking will not be finalised until a payment is made.' 
       redirect_to @booking
     else
       format.html { render :new }
@@ -96,7 +94,7 @@ class BookingsController < ApplicationController
     
     if current_user.stripe_id.blank?
       customer = Stripe::Customer.create(
-        :email => params[:stripeEmail],
+        :email => current_user.email,
         :source  => params[:stripeToken]
       )
       current_user.stripe_id = customer.id
@@ -115,8 +113,8 @@ class BookingsController < ApplicationController
     # current_user.charges << Charge.new(charge_id: charge.id)
     @booking.update_attributes(status: 'Paid')
     if @booking.save
-      # ContactMailer.send_contact_email(:message => "Accepted").deliver_now
-      flash[:notice] = 'Payment made!'
+      # ContactMailer.send_contact_email(message: "Paid").deliver_now
+      flash[:notice] = 'Payment made successfully! Please check your inbox.'
       redirect_to @booking
     else
       format.html { render :new }
