@@ -3,6 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+# Use shrine and AWS S3 for file uploads
+gem 'shrine', '~> 2.11'
+gem "aws-sdk-s3", "~> 1.2" # for AWS S3 storage
+gem "image_processing", "~> 1.0"
+
 # Use devise for authentication
 gem 'devise', '~> 4.4'
 

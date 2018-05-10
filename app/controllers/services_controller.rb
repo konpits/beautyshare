@@ -4,7 +4,18 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.all
+    # @services = Service.all
+    unless params[:services].present?
+      @services = Service.all
+    else
+      unless params[:services][:category_id].blank?
+        search_category = params[:services][:category_id]
+        @services = Service.where(category_id: search_category)
+      else
+        @services = Service.all
+      end     
+    end
+  
   end
 
   # GET /services/1
@@ -72,6 +83,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:title, :description, :price_per_hour, :min_duration, :max_duration, :image_data, :user_id, :category_id)
+      params.require(:service).permit(:title, :description, :price_per_hour, :min_duration, :max_duration, :image, :user_id, :category_id)
     end
 end

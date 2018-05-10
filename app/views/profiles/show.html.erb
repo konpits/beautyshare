@@ -9,7 +9,11 @@
 </p>
 </br>
 <p>
-  <%= image_tag @profile.image_data, width: '10%' %>
+  <% if @profile.image.present? %>
+    <%= image_tag @profile.image_url(:medium) %>
+  <% else %>
+    no image
+  <% end%>
 </p>
 </br>
 <p>

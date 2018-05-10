@@ -3,6 +3,17 @@
 </br>
 <h1>What do you need?</h1>
 
+<div class=“column”>
+   <div class=“search”>
+     </br>
+     <%= form_with scope: :services, method: :get, local: true do |f| %>
+       <%= f.label :category_id %>
+       <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+       <%= f.submit :Filter %>
+     <% end %>
+   </div>
+ </div>
+
 <%= render 'services/services_cards' %>
 
 

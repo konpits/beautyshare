@@ -5,7 +5,11 @@
         <div class="card">
 
             <div class="image">
-                <%= image_tag(service.image_data, alt: "photo") %>
+                <% if service.image.present? %>
+                    <%= image_tag service.image_url(:original) %>
+                <% else %>
+                    no image
+                <% end%>
             </div>
 
             <div class="text">

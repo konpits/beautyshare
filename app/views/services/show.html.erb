@@ -12,7 +12,11 @@
 </br>
 <p>
   <strong></strong>
-  <%= image_tag @service.image_data %>
+    <% if @service.image.present? %>
+      <%= image_tag @service.image_url(:original) %>
+    <% else %>
+      no image
+    <% end%>
 </p>
 </br>
 <p>
