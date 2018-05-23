@@ -1,5 +1,8 @@
 # README
 
+A 10-days project to experiment on building a two-sided marketplace from scratch with rails and ruby gems. 
+(no JS or html-css libs were used)
+
 [Visit website here](https://beautyshare1.herokuapp.com/)
 
 [Source code (github)](https://github.com/konpits/beautyshare)
